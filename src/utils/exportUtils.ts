@@ -183,6 +183,15 @@ export const renderCanvasToImage = async (
     })
   );
   
+  // Add "by ZenGrowth" signature
+  ctx.save();
+  const signatureText = "by ZenGrowth";
+  ctx.font = "bold 14px Arial";
+  ctx.fillStyle = "rgba(0, 0, 0, 0.6)";
+  ctx.textAlign = "right";
+  ctx.fillText(signatureText, canvas.width - 10, canvas.height - 10);
+  ctx.restore();
+  
   // Convert to image data URL with proper format and quality
   const mimeType = `image/${options.format}`;
   return htmlCanvas.toDataURL(mimeType, options.quality / 100);

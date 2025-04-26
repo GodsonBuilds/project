@@ -18,7 +18,7 @@ const SidebarSection: React.FC<SidebarSectionProps> = ({
   return (
     <div className="mb-4 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
       <button
-        className={`w-full flex items-center justify-between px-4 py-3 hover:bg-gray-50 transition-colors text-left ${
+        className={`w-full flex items-center justify-between px-4 py-3 hover:bg-zen-green-500 hover:text-white transition-colors text-left ${
           isOpen ? 'bg-zen-green-400 text-white' : 'bg-white text-gray-800'
         }`}
         onClick={onToggle}

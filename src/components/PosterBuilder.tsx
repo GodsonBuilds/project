@@ -75,7 +75,6 @@ const PosterBuilder: React.FC = () => {
     if (elementType === 'text') {
       const textElement = createTextElement(x, y, cellId, textStyle);
       addElement(textElement);
-      selectElement(textElement.id, 'element');
     } else if (elementType === 'image' && imageUrl) {
       // For images, we need to create a temporary image to get dimensions
       const img = new Image();
@@ -86,7 +85,6 @@ const PosterBuilder: React.FC = () => {
         
         const imageElement = createImageElement(imageUrl, x, y, width, height, cellId);
         addElement(imageElement);
-        selectElement(imageElement.id, 'element');
       };
       img.src = imageUrl;
     }
