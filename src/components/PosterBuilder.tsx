@@ -3,7 +3,7 @@ import { useCanvasState } from '../hooks/useCanvasState';
 import { createTextElement, createImageElement } from '../utils/canvasUtils';
 import CanvasEditor from './canvas/CanvasEditor';
 import Sidebar from './sidebar/Sidebar';
-import { ZoomIn, ZoomOut, Maximize, Minus, Plus } from 'lucide-react';
+import { ZoomIn, ZoomOut, Maximize, Minus, Plus, FileSpreadsheet, Leaf } from 'lucide-react';
 import { THEME } from '../constants/posterBuilderConstants';
 
 const PosterBuilder: React.FC = () => {
@@ -107,11 +107,16 @@ const PosterBuilder: React.FC = () => {
   };
   
   return (
-    <div className="flex h-screen overflow-hidden bg-gray-100">
+    <div className="flex h-screen overflow-hidden bg-white rounded-lg shadow-2xl">
       <div className="flex-1 overflow-auto" style={{ height: '100vh' }}>
         <div className="p-8">
-          <div className="mb-4 flex items-center justify-between">
-            <h1 className="text-2xl font-bold text-gray-800">ZenGrowth Poster Builder</h1>
+          <div className="mb-6 flex items-center justify-between">
+            <div className="flex items-center">
+              <div className="bg-zen-green-500 p-2 rounded-lg mr-3">
+                <Leaf size={24} className="text-white" />
+              </div>
+              <h1 className="text-2xl font-bold text-gray-800">Poster Canvas</h1>
+            </div>
             
             <div className="flex items-center gap-2">
               <button
@@ -122,7 +127,7 @@ const PosterBuilder: React.FC = () => {
                 <ZoomOut size={16} className="text-gray-600" />
               </button>
               
-              <div className="px-2 text-sm text-gray-600">
+              <div className="px-2 text-sm font-medium text-gray-600 bg-gray-100 rounded-md py-1">
                 {Math.round(canvas.scale * 100)}%
               </div>
               
@@ -145,10 +150,10 @@ const PosterBuilder: React.FC = () => {
           </div>
           
           <div 
-            className="mx-auto rounded-lg shadow-xl overflow-hidden bg-white"
+            className="mx-auto rounded-lg shadow-xl overflow-hidden bg-white border-4 border-zen-green-400"
             style={{ 
               maxWidth: '100%',
-              maxHeight: 'calc(100vh - 120px)',
+              maxHeight: 'calc(100vh - 150px)',
               width: canvas.width * canvas.scale,
               height: canvas.height * canvas.scale,
             }}

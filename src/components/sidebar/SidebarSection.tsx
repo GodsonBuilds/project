@@ -16,19 +16,18 @@ const SidebarSection: React.FC<SidebarSectionProps> = ({
   children,
 }) => {
   return (
-    <div className="mb-4 border border-gray-200 rounded-lg overflow-hidden">
+    <div className="mb-4 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
       <button
-        className="w-full flex items-center justify-between px-4 py-3 bg-white hover:bg-gray-50 transition-colors text-left"
+        className={`w-full flex items-center justify-between px-4 py-3 hover:bg-gray-50 transition-colors text-left ${
+          isOpen ? 'bg-zen-green-400 text-white' : 'bg-white text-gray-800'
+        }`}
         onClick={onToggle}
-        style={{
-          borderBottom: isOpen ? `1px solid ${THEME.colors.border}` : 'none',
-        }}
       >
-        <span className="font-medium text-gray-800">{title}</span>
+        <span className="font-medium">{title}</span>
         {isOpen ? (
-          <ChevronUp size={18} className="text-gray-500" />
+          <ChevronUp size={18} className={isOpen ? 'text-white' : 'text-gray-500'} />
         ) : (
-          <ChevronDown size={18} className="text-gray-500" />
+          <ChevronDown size={18} className={isOpen ? 'text-white' : 'text-gray-500'} />
         )}
       </button>
       {isOpen && (

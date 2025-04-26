@@ -6,7 +6,8 @@ import {
   Palette, 
   Download,
   ChevronRight,
-  ChevronLeft
+  ChevronLeft,
+  Leaf
 } from 'lucide-react';
 import { 
   Canvas, 
@@ -96,12 +97,12 @@ const Sidebar: React.FC<SidebarProps> = ({
       style={{ boxShadow: THEME.shadows.lg }}
     >
       {isCollapsed ? (
-        <div className="p-2 h-full">
+        <div className="p-2 h-full bg-green-50">
           <button
             onClick={toggleCollapse}
-            className="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+            className="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-zen-green-500 hover:bg-zen-green-400 transition-colors"
           >
-            <ChevronRight size={20} className="text-gray-600" />
+            <ChevronRight size={20} className="text-white" />
           </button>
           
           <div className="flex flex-col gap-4 items-center">
@@ -112,7 +113,7 @@ const Sidebar: React.FC<SidebarProps> = ({
               }}
               className={`flex items-center justify-center w-10 h-10 rounded-full ${
                 activeSidebarSection === 'canvas' 
-                  ? 'bg-primary text-white' 
+                  ? 'bg-zen-green-500 text-white' 
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               } transition-colors`}
               title="Canvas Settings"
@@ -127,7 +128,7 @@ const Sidebar: React.FC<SidebarProps> = ({
               }}
               className={`flex items-center justify-center w-10 h-10 rounded-full ${
                 activeSidebarSection === 'grid' 
-                  ? 'bg-primary text-white' 
+                  ? 'bg-zen-green-500 text-white' 
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               } transition-colors`}
               title="Grid Settings"
@@ -142,7 +143,7 @@ const Sidebar: React.FC<SidebarProps> = ({
               }}
               className={`flex items-center justify-center w-10 h-10 rounded-full ${
                 activeSidebarSection === 'element' 
-                  ? 'bg-primary text-white' 
+                  ? 'bg-zen-green-500 text-white' 
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               } transition-colors`}
               title="Element Library"
@@ -157,7 +158,7 @@ const Sidebar: React.FC<SidebarProps> = ({
               }}
               className={`flex items-center justify-center w-10 h-10 rounded-full ${
                 activeSidebarSection === 'export' 
-                  ? 'bg-primary text-white' 
+                  ? 'bg-zen-green-500 text-white' 
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               } transition-colors`}
               title="Export Options"
@@ -168,17 +169,20 @@ const Sidebar: React.FC<SidebarProps> = ({
         </div>
       ) : (
         <div className="flex flex-col h-full">
-          <div className="flex items-center justify-between p-4 border-b border-gray-200 shrink-0">
-            <h2 className="text-lg font-semibold text-gray-800">Poster Builder</h2>
+          <div className="flex items-center justify-between p-4 border-b border-gray-200 shrink-0 bg-zen-green-500 text-white">
+            <div className="flex items-center">
+              <Leaf size={20} className="mr-2" />
+              <h2 className="text-lg font-semibold">ZenGrowth Design</h2>
+            </div>
             <button
               onClick={toggleCollapse}
-              className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+              className="flex items-center justify-center w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
             >
-              <ChevronLeft size={18} className="text-gray-600" />
+              <ChevronLeft size={18} className="text-white" />
             </button>
           </div>
           
-          <div className="p-4 overflow-y-auto grow">
+          <div className="p-4 overflow-y-auto grow bg-green-50">
             <div className="space-y-4">
               <CanvasSettingsPanel
                 canvas={canvas}
