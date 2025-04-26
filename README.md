@@ -14,7 +14,7 @@ Un générateur de posters simple et élégant, construit avec **React**, **Type
 1. Clonez le projet :
 
 ```bash
-git clone https://github.com/votre-utilisateur/poster-builder.git
+git clone https://github.com/GodsonBuilds/project.git
 cd poster-builder
 npm install
 npm run dev
